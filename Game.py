@@ -46,7 +46,7 @@ class NumberGuessingGame :
                     print(f'Incorrect! the number is less than {user_guess}') 
 
             except ValueError : 
-                 print('Thats not a number, try to write a number ')
+                 print("That's not a number, try to write a number ")
         
 
         print(f"""
@@ -63,7 +63,7 @@ class NumberGuessingGame :
 
     def computer_guess (self, user_answer) : 
     
-        print('\nNow its my turn to guess yours')
+        print("\nNow it's my turn to guess yours")
 
         low = 1 
         high = 100 
@@ -74,7 +74,7 @@ class NumberGuessingGame :
             computer_guess = (low + high ) // 2 
             print(f'My guess is {computer_guess} ') 
 
-            user_response = input('Tell me if its greater (+), lower (-) or correct (c) ').strip().lower() 
+            user_response = input("Tell me if it's greater (+), lower (-) or correct (c) ").strip().lower() 
         
 
             if user_response not in ['+', '-', 'c'] : 
@@ -91,7 +91,7 @@ class NumberGuessingGame :
                  print (f'Yay! I guessed it right. :D') 
                  return True, computer_attempts
         
-        print('It seems like i couldnt make it :<')
+        print("It seems like i couldn't make it :<")
         return False, computer_attempts 
     
     def rounds(self):
@@ -102,12 +102,12 @@ class NumberGuessingGame :
             computer_answer = randint(1, 100) 
 
             #UsersRound
-            print('\nIts your turn') 
+            print("\nIt's your turn") 
             user_wins, user_attempts = self.users_guess(computer_answer) 
 
             #If user loses 
             if not user_wins : 
-                print('\nIts my turn now!')
+                print('\nIt is my turn now!')
                 computer_wins, computer_attempts = self.computer_guess(computer_answer)
             else:
                 computer_wins = False 
@@ -118,7 +118,7 @@ class NumberGuessingGame :
                 self.computer_score += 1
             else:
                 
-                print('Its a tie!') 
+                print("It's a tie!") 
         if self.user_score == self.computer_score :
             final_round = input('Do you want to play an extra round to break the tie ? answer me with yes or no ').strip().lower()
             if final_round == 'yes':
@@ -157,7 +157,7 @@ class NumberGuessingGame :
         elif self.computer_score > self.user_score :
             print(f'Hehe, I am the champion! Good luck next time {user_name}') 
         else :
-            print('Well played! we are both champions, arent we ? :D') 
+            print("Well played! we are both champions, aren't we ? :D") 
 
 game = NumberGuessingGame(user_name)
 game.rounds() 
